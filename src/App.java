@@ -39,6 +39,19 @@ System.out.println(triagem.desenfileirar());    // Carla — fila fica vazia
 System.out.println(triagem.estaVazia());        // true
 triagem.enfileirar("Diego");                    // ← aqui quebra se você errou o ultimo
 System.out.println(triagem.primeiro());         // Diego
+Deque<String> d = new Deque<>();
+d.inserirFim("B");
+d.inserirInicio("A");
+d.inserirFim("C");                      // A B C
+System.out.println(d.primeiro());       // A
+System.out.println(d.ultimo());         // C
+System.out.println(d.removerInicio());  // A
+System.out.println(d.removerFim());     // C
+System.out.println(d.tamanho());        // 1
+System.out.println(d.removerFim());     // B — esvazia
+System.out.println(d.estaVazia());      // true
+d.inserirInicio("D");                   // testa se as pontas zeraram certo
+System.out.println(d.ultimo());         // D
 }
 }
 
