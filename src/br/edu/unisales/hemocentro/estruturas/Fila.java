@@ -51,12 +51,20 @@ public class Fila<T> {
         return dado;
     }
 
-    public T primeiro() {
-    } // devolve o dado do primeiro, sem remover (lança exceção se vazia)
+   
+        public T primeiro() {
+        if (estaVazia()) {
+            throw new java.util.NoSuchElementException("Fila vazia");
+        }
+        return primeiro.dado;
+    }
 
     public boolean estaVazia() {
+        return tamanho == 0;
     }
 
     public int tamanho() {
+        return tamanho;
     }
 }
+

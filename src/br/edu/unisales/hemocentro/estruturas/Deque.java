@@ -4,7 +4,7 @@ public class Deque<T> {
 
     private class No {
         T dado;
-        No anterior;   // ← a novidade
+        No anterior;
         No proximo;
 
         No(T dado) {
@@ -28,10 +28,10 @@ public class Deque<T> {
         No novo = new No(e);
         if (estaVazia()) {
             primeiro = novo;
-            ultimo = novo;          // único elemento: é as duas pontas
+            ultimo = novo;
         } else {
             novo.proximo = primeiro;
-            primeiro.anterior = novo;   // religa nos DOIS sentidos
+            primeiro.anterior = novo;
             primeiro = novo;
         }
         tamanho++;
@@ -58,9 +58,9 @@ public class Deque<T> {
         primeiro = removido.proximo;
 
         if (primeiro == null) {
-            ultimo = null;              // esvaziou
+            ultimo = null;
         } else {
-            primeiro.anterior = null;   // o novo primeiro não tem anterior
+            primeiro.anterior = null;
         }
 
         T dado = removido.dado;
@@ -76,12 +76,12 @@ public class Deque<T> {
             throw new java.util.NoSuchElementException("Deque vazio");
         }
         No removido = ultimo;
-        ultimo = removido.anterior;     // ← aqui está o ganho do duplo
+        ultimo = removido.anterior;
 
         if (ultimo == null) {
-            primeiro = null;            // esvaziou
+            primeiro = null;
         } else {
-            ultimo.proximo = null;      // o novo último não tem próximo
+            ultimo.proximo = null;
         }
 
         T dado = removido.dado;

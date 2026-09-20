@@ -1,5 +1,6 @@
 import br.edu.unisales.hemocentro.estruturas.Fila;
 import br.edu.unisales.hemocentro.estruturas.ListaEncadeada;
+import br.edu.unisales.hemocentro.estruturas.*;
 public class App {
     public static void main(String[] args) {
         ListaEncadeada<String> lista = new ListaEncadeada<>();
