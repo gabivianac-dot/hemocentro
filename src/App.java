@@ -1,3 +1,4 @@
+import br.edu.unisales.hemocentro.estruturas.Fila;
 import br.edu.unisales.hemocentro.estruturas.ListaEncadeada;
 public class App {
     public static void main(String[] args) {
@@ -24,8 +25,21 @@ System.out.println(outra.remover(1));         // esperado: C (remoção do meio/
 System.out.println(outra.tamanho());          // esperado: 1
 System.out.println(outra.contem("B"));    // esperado: true
 System.out.println(outra.contem("Z"));    // esperado: false
-    }
     
+    Fila<String> triagem = new Fila<>();
+System.out.println(triagem.estaVazia());        // true
+triagem.enfileirar("Ana");
+triagem.enfileirar("Bruno");
+triagem.enfileirar("Carla");
+System.out.println(triagem.tamanho());          // 3
+System.out.println(triagem.primeiro());         // Ana (sem remover)
+System.out.println(triagem.desenfileirar());    // Ana
+System.out.println(triagem.desenfileirar());    // Bruno
+System.out.println(triagem.desenfileirar());    // Carla — fila fica vazia
+System.out.println(triagem.estaVazia());        // true
+triagem.enfileirar("Diego");                    // ← aqui quebra se você errou o ultimo
+System.out.println(triagem.primeiro());         // Diego
+}
 }
 
 
